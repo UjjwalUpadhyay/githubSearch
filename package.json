@@ -6,7 +6,6 @@
     "node": "8.1.4",
     "yarn": "0.27.5"
   },
-  "homepage": "https://ddcreationstudios.github.io/fetchingReactRedux/",
   "scripts": {
     "start-message": "babel-node tools/startMessage.js",
     "prestart": "npm-run-all --parallel start-message",
@@ -27,7 +26,6 @@
     "open:cover": "npm run test:cover && opn ./coverage/lcov-report/index.html",
     "analyze-bundle": "babel-node ./tools/analyzeBundle.js"
   },
-  "author": "Daniel Deutsch",
   "dependencies": {
     "axios": "^0.16.2",
     "express": "^4.15.3",
