@@ -11,15 +11,15 @@ import { loadRepos } from './actions/reposAction';
 let currentValue;
 function handleChange() {
 	let previousValue = currentValue;
-	currentValue = store.getState().user;
+	currentValue = store.getState().repo_type;
 
 	if (previousValue !== currentValue) {
-		store.dispatch(loadRepos(store.getState().user));
+		store.dispatch(loadRepos(store.getState().repo_type));
 	}
 }
 
 const store = configureStore();
-store.dispatch(loadRepos(store.getState().user));
+store.dispatch(loadRepos(store.getState().repo_type));
 store.subscribe(handleChange);
 
 render(

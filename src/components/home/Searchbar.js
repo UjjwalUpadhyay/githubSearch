@@ -1,23 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Searchbar = ({ user, onChange, onSave }) => {
+const SearchBar = ({ user, onChange }) => {
 	return (
 		<div className="container">
-			<form onSubmit={onSave}>
-				<div className="input-field">
-					<i className="fa fa-search material-icons prefix red-text text-darken-4" aria-hidden="true" />
-					<input id="icon_prefix" type="text" className="validate" placeholder="Github username" value={user} onChange={onChange} />
-				</div>
-			</form>
+			<input type="text" className="form-control input-sm input-block js-filterable-field js-your-repositories-search" id="your-repos-filter" placeholder="Find a repository…" aria-label="Find a repository…" tabindex="2" data-url="https://github.com/" onChange={onChange} value={user}>
+      </input>
 		</div>
 	);
 };
 
-Searchbar.propTypes = {
+SearchBar.propTypes = {
 	user: PropTypes.string.isRequired,
-	onChange: PropTypes.func.isRequired,
-	onSave: PropTypes.func.isRequired
+	onChange: PropTypes.func.isRequired
 };
 
-export default Searchbar;
+export default SearchBar;

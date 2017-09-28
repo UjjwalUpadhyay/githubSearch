@@ -13,18 +13,6 @@ class HomePage extends Component {
 		this.state = {
 			user: ""
 		};
-		this.updateSearch = this.updateSearch.bind(this);
-		this.saveSearch = this.saveSearch.bind(this);
-	}
-
-	updateSearch(e) {
-		let user = e.target.value;
-		return this.setState({ user: user });
-	}
-
-	saveSearch(e) {
-		e.preventDefault();
-		this.props.actions.loadUser(this.state.user);
 	}
 
 	repoRow(repo, index) {
@@ -38,22 +26,11 @@ class HomePage extends Component {
 	render() {
 		return (
 			<div className="container">
-				<Searchbar
-					user={this.state.user}
-					onChange={this.updateSearch}
-					onSave={this.saveSearch}
-				/>
 				{this.props.repos.map(this.repoRow)}
 			</div>
 		);
 	}
 }
-
-HomePage.propTypes = {
-	repos: PropTypes.array.isRequired,
-	user: PropTypes.string.isRequired,
-	actions: PropTypes.object.isRequired
-};
 
 function mapStateToProps(state) {
 	return {
